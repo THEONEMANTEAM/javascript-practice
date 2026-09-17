@@ -15,3 +15,4 @@ alert(user);
 alert(age);
 alert(message2);
 // It defines three variables and assigns values to them. The variables can be used later in the code.
+const mybirthday = "18.04.2000";
