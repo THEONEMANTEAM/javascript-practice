@@ -130,3 +130,10 @@ else if (born < 17) {
 }
 else { alert("Youre 17 years old"); }
 // it should show "Youre old kid" if the user inputs a number greater than 17, "Youre young kid" if the user inputs a number less than 17, and "Youre 17 years old" if the user inputs 17. The prompt function asks the user for input, and the if-else statement checks the input and shows the appropriate message in an alert box.
+let text = prompt("What is your age?", "4");
+let message3 = (text < 3) ? "Hi, baby!" :
+    (text < 18) ? "Hello!" :
+        (text < 100) ? "Greetings!" :
+            "What an unusual age!";
+alert(message3);
+// it should show "Hi, baby!" if the user inputs a number less than 3, "Hello!" if the user inputs a number less than 18, "Greetings!" if the user inputs a number less than 100, and "What an unusual age!" if the user inputs a number greater than or equal to 100. The prompt function asks the user for input, and the ternary operator checks the input and assigns the appropriate message to message3, which is then shown in an alert box.    
