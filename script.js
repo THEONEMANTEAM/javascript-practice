@@ -103,3 +103,30 @@ alert(counter);
 counter--;
 alert(counter);
 // it should show 1, because the -- operator decrements counter by 1. The alert function shows the value of counter in an alert box.
+alert(5 > 4);
+// it should show true, because 5 is greater than 4. The alert function shows the result of the comparison in an alert box.
+alert(5 != 4);
+// it should show true, because 5 is not equal to 4. The alert function shows the result of the comparison in an alert box.
+alert(5 == 5);
+// it should show true, because 5 is equal to 5. The alert function shows the result of the comparison in an alert box.
+alert(5 === 5);
+// it should show true, because 5 is strictly equal to 5. The alert function shows the result of the comparison in an alert box.
+alert(5 !== 5);
+// it should show false, because 5 is not strictly not equal to 5. The alert function shows the result of the comparison in an alert box.
+let year = prompt("What year were you born?", "");
+if (year == 2009) {
+    alert("Youre 17 years old");
+    alert("Youre old kid");
+} else {
+    alert("Youre not 17 years old");
+}
+// it should show "Youre 17 years old" if the user inputs 2009. The prompt function asks the user for input, and the if statement checks if the input is equal to 2009. If it is, an alert box shows the message.
+let born = prompt("What day were you born?", "");
+if (born > 17) {
+    alert("Youre old kid");
+}
+else if (born < 17) {
+    alert("Youre young kid");
+}
+else { alert("Youre 17 years old"); }
+// it should show "Youre old kid" if the user inputs a number greater than 17, "Youre young kid" if the user inputs a number less than 17, and "Youre 17 years old" if the user inputs 17. The prompt function asks the user for input, and the if-else statement checks the input and shows the appropriate message in an alert box.
