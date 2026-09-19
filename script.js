@@ -136,4 +136,15 @@ let message3 = (text < 3) ? "Hi, baby!" :
         (text < 100) ? "Greetings!" :
             "What an unusual age!";
 alert(message3);
-// it should show "Hi, baby!" if the user inputs a number less than 3, "Hello!" if the user inputs a number less than 18, "Greetings!" if the user inputs a number less than 100, and "What an unusual age!" if the user inputs a number greater than or equal to 100. The prompt function asks the user for input, and the ternary operator checks the input and assigns the appropriate message to message3, which is then shown in an alert box.    
+// it should show "Hi, baby!" if the user inputs a number less than 3, "Hello!" if the user inputs a number less than 18, "Greetings!" if the user inputs a number less than 100, and "What an unusual age!" if the user inputs a number greater than or equal to 100. The prompt function asks the user for input, and the ternary operator checks the input and assigns the appropriate message to message3, which is then shown in an alert box. 
+let hour = 12;
+let isWeekend = true;
+if (hour < 10 || hour > 20 || isWeekend) {
+    alert("Go home")
+};
+let hour2 = 13;
+let minute = 40;
+if (hour2 == 13 && minute == 40) {
+    alert("The time is 13:40");
+}
+alert(!null);
