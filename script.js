@@ -148,3 +148,26 @@ if (hour2 == 13 && minute == 40) {
     alert("The time is 13:40");
 }
 alert(!null);
+// it should show true, because the ! operator negates the value of null, which is falsy. The alert function shows the result in an alert box.
+alert(!!null);
+// it should show false, because the !! operator converts null to a boolean value, which is false. The alert function shows the result in an alert box.
+let player;
+alert(player ?? "Newplayer");
+// it should show "Newplayer", because the ?? operator returns the right-hand operand if the left-hand operand is null or undefined. In this case, player is undefined, so "Newplayer" is returned. The alert function shows the result in an alert box.
+let player1 = "Gates";
+alert(player1 ?? "Newplayer");
+// it should show "Gates", because the ?? operator returns the left-hand operand if it is not null or undefined. In this case, player1 is assigned the value of "Gates", which is not null or undefined, so "Gates" is returned. The alert function shows the result in an alert box.
+let i = 2;
+while (i <= 7) {
+    alert(i);
+    i++;
+}
+let i2 = 3;
+while (i2) {
+    alert(i2);
+    i2--;
+}
+let input;
+do {
+    input = prompt("Enter a number less than 10?", 0);
+} while (input <= 10);
