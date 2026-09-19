@@ -170,4 +170,7 @@ while (i2) {
 let input;
 do {
     input = prompt("Enter a number less than 10?", 0);
-} while (input <= 10);
+} while (input < 10);
+for (let i3 = 0; i3 < 5; i3++0) {
+    alert(i3);
+}
