@@ -262,3 +262,17 @@ try {
         throw err; // 4. Rethrow unknown coding bugs
     }
 }
+let v = prompt("Enter a number", "");
+try {
+    if (v != 7) {
+        throw new SyntaxError("V is not 7");
+    }
+
+} catch (err) {
+    if (err instanceof SyntaxError) {
+        alert("v is not 7");
+    }
+
+} finally {
+    alert("you finished the process")
+}
