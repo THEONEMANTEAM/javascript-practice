@@ -213,3 +213,52 @@ outer: for (let b = 0; b < 5; b++) {
     }
     alert('You have entered all the cords');
 }
+try {
+    alert("Start of try runs");
+    // it will run since no errors
+    alert("End of try runs");
+}
+catch (err) {
+    alert("An error has occured: " + err);
+}
+// The code will run well and skip the catch block since there are no errors in the try block. The alert function shows the messages in alert boxes.
+try {
+    alert("Start of try runs");
+    dickson;
+    alert("End of try runs");
+}
+catch (err) {
+    alert("An error has occured: " + err);
+}
+let json = '{ "age": 30 }'; // incomplete data
+
+try {
+    let user = JSON.parse(json); // succeeds, no error
+
+    if (!user.name) {
+        throw new SyntaxError("Incomplete data: no name"); // manually trigger an error
+    }
+
+    alert(user.name); // SKIPPED — throw already jumped to catch
+
+} catch (err) {
+    alert("JSON Error: " + err.message); // "JSON Error: Incomplete data: no name"
+}
+try {
+    let user = JSON.parse(json); // Parses incoming data
+
+    if (!user.name) {
+        throw new SyntaxError("Incomplete data: no name"); // 1. Custom validation error
+    }
+
+    blabla(); // 2. A typo/bug! Calling a function that doesn't exist
+
+    alert(user.name);
+} catch (err) {
+
+    if (err instanceof SyntaxError) {
+        alert("JSON Error: " + err.message); // 3. Handle known validation errors
+    } else {
+        throw err; // 4. Rethrow unknown coding bugs
+    }
+}
