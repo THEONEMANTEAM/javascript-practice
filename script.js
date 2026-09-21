@@ -170,7 +170,46 @@ while (i2) {
 let input;
 do {
     input = prompt("Enter a number less than 10?", 0);
-} while (input < 10);
-for (let i3 = 0; i3 < 5; i3++0) {
+} while (input >= 10);
+for (let i3 = 0; i3 < 5; i3++) {
     alert(i3);
+}
+let sum = 0;
+while (true) {
+    let value = +prompt("Enter a number?", 0);
+    if (!value) break;
+    sum += value;
+}
+alert("Sum: " + sum);
+for (let i4 = 1; i4 <= 5; i4++) {
+    if (i4 === 3) continue;
+    alert(i4);
+}
+// Continue skips the one round,but keep looping while break stops everything, exits the loop completely.
+let age3;
+
+while (true) {
+    age3 = prompt("Enter your age (numbers only):", "");
+
+    if (age3 === null) break; // let them cancel if they want
+
+    age3 = +age3; // convert to number
+
+    if (isNaN(age3)) {
+        alert("That's not a number. Please try again.");
+        continue; // skip the rest, loop back and ask again
+    }
+
+    break; // valid number entered, exit the loop
+}
+
+if (age3 !== null) {
+    alert("Your age is: " + age3);
+}
+outer: for (let b = 0; b < 5; b++) {
+    for (let c = 0; c < 5; c++) {
+        let value = prompt(`Enter cords ${b},${c}`, '');
+        if (!value) break outer; // if empty string or canceled, then break out of both loops
+    }
+    alert('You have entered all the cords');
 }
