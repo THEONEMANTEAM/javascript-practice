@@ -270,9 +270,32 @@ try {
 
 } catch (err) {
     if (err instanceof SyntaxError) {
-        alert("v is not 7");
+        alert(err);
     }
 
 } finally {
     alert("you finished the process")
 }
+function showMessage() {
+    alert("Hello Kids");
+}
+showMessage();
+showMessage();
+let winner = "Dariel";
+function showPlayer() {
+    winner = "Peter";
+    let story = "Hello " + winner;
+    alert(story);
+}
+alert(winner);
+showPlayer();
+alert(winner);
+// Functions stor reusable code
+let catcher = "Fave";
+function showCatcher() {
+    let catcher = "Davido";
+    let signal = "Hello " + catcher;
+    alert(signal);
+}
+showCatcher();
+alert(catcher)
