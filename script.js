@@ -298,4 +298,33 @@ function showCatcher() {
     alert(signal);
 }
 showCatcher();
-alert(catcher)
+alert(catcher);
+function showName(from, text) {
+    from = "*" + from + "*";
+    alert(from + ": " + text);
+}
+showName("Damon", "Welcome");
+showName("Vary", "Closer");
+function showGreeting(from, text = "No greeting") {
+    alert(from + ": " + text);
+}
+showGreeting("Ann");
+// If theres no input from the user we can put a pre made response
+function showStatus(from, text) {
+    if (text === undefined) {
+        text = "No text given";
+        from = "*" + from + "*";
+    }
+    if (!from) {
+        from = "No name was given"
+    }
+    alert(from + ": " + text);
+}
+showStatus("Nigel")
+function showVariety(from, text) {
+    text = text || "No text given";
+    from = from || "No name was given";
+    alert(from + ": " + text);
+
+}
+showVariety("", "Welcome");
