@@ -328,3 +328,45 @@ function showVariety(from, text) {
 
 }
 showVariety("", "Welcome");
+function sum1(a, b) {
+    return a + b;
+}
+let result = sum1(5, 10);
+alert(result);
+function checkAge(age5) {
+    if (age5 >= 18) {
+        return true;
+    } else {
+        return confirm("Do you have permission from your parents?");
+    }
+}
+let age5 = prompt("Are you above 18", "18");
+if (checkAge(age5)) {
+    alert("Access Granted");
+}
+else {
+    alert("Access denied");
+}
+// Return is used to give a value back and stop a function execution.
+function ask(question, yes, no) {
+    if (confirm(question)) yes();
+    else no();
+}
+function showOk() {
+    alert("You agreed");
+}
+function showCancel() {
+    alert("You canceled");
+}
+ask("Do you agree?", showOk, showCancel);
+function ask1(question, yes, no) {
+    if (confirm(question)) yes()
+    else no()
+}
+ask1(
+    "Do you accept",
+    function () { alert("You accepted") },
+    function () { alert("You rejected") }
+);
+let sum2 = (a, b) => a + b;
+alert(sum2(1, 2));
