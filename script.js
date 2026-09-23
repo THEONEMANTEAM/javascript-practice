@@ -370,3 +370,18 @@ ask1(
 );
 let sum2 = (a, b) => a + b;
 alert(sum2(1, 2));
+if (true) {
+    let value2 = 18;
+    alert(value2);
+}
+alert(value2)
+// Variables defined inside {} only can be called in there yeah.
+function makeCounter() {
+    let count = 0;
+    return function () {
+        return count++;
+    }
+}
+let counter1 = makeCounter();
+alert(counter1());
+alert(counter1());
