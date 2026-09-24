@@ -374,7 +374,7 @@ if (true) {
     let value2 = 18;
     alert(value2);
 }
-alert(value2)
+
 // Variables defined inside {} only can be called in there yeah.
 function makeCounter() {
     let count = 0;
@@ -385,3 +385,18 @@ function makeCounter() {
 let counter1 = makeCounter();
 alert(counter1());
 alert(counter1());
+function sumAll(...nums) {
+    let sum4 = 0;
+    for (let n of nums) sum4 += n;
+    return sum4;
+}
+alert(sumAll(1, 2));
+alert(sumAll(1, 3, 5));
+alert(sumAll(2, 4, 6));
+function showTitle(firstname, lastname, ...title) {
+    alert(firstname + " " + lastname);
+    alert(title[0]);
+    alert(title[1]);
+    alert(title.length);
+}
+showTitle("Riley", "Dariel", "Kaden", "Ola");
