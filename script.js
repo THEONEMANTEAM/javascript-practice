@@ -400,3 +400,11 @@ function showTitle(firstname, lastname, ...title) {
     alert(title.length);
 }
 showTitle("Riley", "Dariel", "Kaden", "Ola");
+function showTerm(firstterm, secondterm, ...term) {
+    alert(firstterm + " " + secondterm);
+    for (let z of term) {
+        alert(z);
+    }
+    alert(term.length);
+}
+showTerm("Named", "Cadrien", "philo");
