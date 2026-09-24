@@ -408,3 +408,12 @@ function showTerm(firstterm, secondterm, ...term) {
     alert(term.length);
 }
 showTerm("Named", "Cadrien", "philo");
+let arr = [1, 2, 3, 4, 5, 6];
+alert(Math.max(...arr));
+let arr1 = [2, 3, 4, 5, 6, 7];
+let arr2 = [6, 3, 2, 5, 7, 8];
+alert(Math.max(...arr1, ...arr2));
+let stri = "Hari"
+alert([...stri]);
+let strin = "Helio"
+alert(Array.from(strin));
