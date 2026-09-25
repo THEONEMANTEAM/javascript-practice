@@ -417,3 +417,38 @@ let stri = "Hari"
 alert([...stri]);
 let strin = "Helio"
 alert(Array.from(strin));
+// This uses spread syntax to spread out each character of the string
+let arr3 = [5, 3, 5, 6, 8, 9];
+let arr4 = [3, 2, 5, 6, 7, 8];
+let merged = [...arr4, 2, ...3, 0];
+alert(merged)
+// Recursive
+function pow(x, n) {
+    if (x == 1) {
+        return x;
+    } else {
+        return x * pow(x, n - 1);
+    }
+}
+alert(pow(2, 3));
+/*a function that keeps calling itself with a shrinking/simpler version of the problem, until it hits a condition (the base case) where it can answer directly without calling itself again and then all those paused calls resume and combine their answers on the way back up. */
+function triple(x) {
+    return x * 3
+}
+function cachingDecorator(func) {
+    let cache = new Map();
+    return function (x) {
+        if (cache.has(x)) {
+            return cache.get(x);
+        }
+        let result = func(x);
+        cache.set(x, result);
+        return result;
+    }
+}
+triple = cachingDecorator(triple);
+alert(triple(5));
+alert("Again: " + triple(5));
+alert(triple(2));
+alert("Again: " + triple(2));
+
