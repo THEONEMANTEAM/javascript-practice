@@ -420,11 +420,11 @@ alert(Array.from(strin));
 // This uses spread syntax to spread out each character of the string
 let arr3 = [5, 3, 5, 6, 8, 9];
 let arr4 = [3, 2, 5, 6, 7, 8];
-let merged = [...arr4, 2, ...3, 0];
+let merged = [...arr4, 2, ...arr3, 0];
 alert(merged)
 // Recursive
 function pow(x, n) {
-    if (x == 1) {
+    if (n == 1) {
         return x;
     } else {
         return x * pow(x, n - 1);
@@ -451,4 +451,24 @@ alert(triple(5));
 alert("Again: " + triple(5));
 alert(triple(2));
 alert("Again: " + triple(2));
+
+function slow(x) {
+    return x * 5
+}
+function cachingdecorator1(funct) {
+    let val = new Map();
+    return function (x) {
+        if (val.has(x)) {
+
+            return val.get(x);
+        }
+        let result1 = funct(x);
+        val.set(x, result1);
+        return result1;
+    }
+}
+slow = cachingdecorator1(slow);
+alert(slow(5));
+
+
 
