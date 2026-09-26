@@ -452,23 +452,25 @@ alert("Again: " + triple(5));
 alert(triple(2));
 alert("Again: " + triple(2));
 
-function slow(x) {
-    return x * 5
+function slow(a, b) {
+    return a + b;
 }
 function cachingdecorator1(funct) {
     let val = new Map();
-    return function (x) {
-        if (val.has(x)) {
+    return function (...args) {
+        let key = args.join(",")
+        if (val.has(key)) {
 
-            return val.get(x);
+            return val.get(key);
         }
-        let result1 = funct(x);
-        val.set(x, result1);
+
+        let result1 = funct(...args);
+        val.set(key, result1);
         return result1;
     }
 }
 slow = cachingdecorator1(slow);
-alert(slow(5));
+alert(slow(5, 8));
 
 
 
