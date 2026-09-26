@@ -471,6 +471,42 @@ function cachingdecorator1(funct) {
 }
 slow = cachingdecorator1(slow);
 alert(slow(5, 8));
+// That was a task
+function fib(v) {
+    if (v <= 1) {
+        return v
+    } return fib(v - 1) + fib(v - 2)
+}
+function cachingdecorator2(functi) {
+    let fibi = new Map();
+    return function fib(v) {
+        if (fibi.has(v)) {
+            return fibi.get(v);
 
+        }
+        let result2 = functi(v);
+        fibi.set(v, result2);
+        return result2;
+    }
+}
+fib = cachingdecorator2(fib)
+alert(fib(10));
+alert("Again: " + fib(10));
+// Fibonachi task
+function showTask() {
+    alert("Ready player one")
+}
 
-
+function once(functio) {
+    let showed = false;
+    return function () {
+        if (showed) {
+            return;
+        }
+        functio();
+        showed = true;
+    };
+}
+showTask = once(showTask);
+showTask();
+showTask();
