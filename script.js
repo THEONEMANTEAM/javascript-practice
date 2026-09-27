@@ -526,3 +526,26 @@ let toggle1 = makeToggle();
 alert(toggle1());
 alert(toggle1());
 alert(toggle1());
+// Practice task on closures
+function makeID() {
+    let counti = 0
+    return function () {
+        counti++
+        return counti;
+    }
+}
+let ID = makeID();
+alert(ID());
+alert(ID());
+alert(ID());
+// ID generator
+function makeAccumulator() {
+    let countii = 0
+    return function (x) {
+        countii += x
+        return countii;
+    }
+}
+let accumulator = makeAccumulator();
+alert(accumulator(10));
+alert(accumulator(15));
