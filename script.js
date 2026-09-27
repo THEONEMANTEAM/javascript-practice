@@ -510,3 +510,19 @@ function once(functio) {
 showTask = once(showTask);
 showTask();
 showTask();
+// I practiced the syntax that makes the progeam only run once 
+function makeToggle() {
+    let state = "off";
+    return function () {
+        if (state === "off") {
+            state = "on"
+        } else {
+            state = "off"
+        }
+        return state;
+    };
+}
+let toggle1 = makeToggle();
+alert(toggle1());
+alert(toggle1());
+alert(toggle1());
