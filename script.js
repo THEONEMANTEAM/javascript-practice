@@ -549,3 +549,21 @@ function makeAccumulator() {
 let accumulator = makeAccumulator();
 alert(accumulator(10));
 alert(accumulator(15));
+// Built an accumulator
+function multiply(a, b) {
+    return a * b;
+}
+function memoize(functio) {
+    let valu = new Map();
+    return function (...spi) {
+        let key1 = spi.join(",");
+        if (valu.has(key1)) {
+            return valu.get(key1);
+        } let result2 = functio(...spi);
+        valu.set(key1, result2);
+        return result2;
+    }
+}
+multiply = memoize(multiply);
+alert(multiply(5, 8));
+alert(multiply(5, 8));
