@@ -579,3 +579,26 @@ alert(user2.age);
 alert(user2.Sex);
 alert(user2["like friends"]);
 // delete user.Name : This is used to remove an operator.
+let fruit = prompt("How many fruits do you want", "apple")
+let bag = {
+    [fruit]: 5
+};
+alert(bag.apple);
+function makeAge(name, age) {
+    return {
+        name,
+        age,
+    };
+}
+let user3 = makeAge("isiah", 50);
+alert(user3.age);
+alert(user3.name);
+let valve = {
+    table: "Exists",
+    nummbur: 50,
+};
+let checker = "table"
+let checker1 = "nummbur"
+alert(checker in valve);
+alert(checker1 in valve);
+// The in syntax check if a value exists then gives true or false
