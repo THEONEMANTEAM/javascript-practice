@@ -602,3 +602,29 @@ let checker1 = "nummbur"
 alert(checker in valve);
 alert(checker1 in valve);
 // The in syntax check if a value exists then gives true or false
+let play = {
+    name1: "Verity",
+    age: 20000,
+    isyellow: true,
+};
+for (let key1 in play) {
+    alert(key1);
+    alert(play[key1]);
+}
+// Using the for in loop
+let fruits = ["Banana", "Oranges", "Watermelon"]
+alert(fruits[0]);
+alert(fruits[1]);
+alert(fruits[2]);
+// Arrays start numbering from 0
+let fruits1 = ["Apple", "Pear", "Corn"];
+alert(fruits1.pop());
+alert(fruits1);
+// The pop() alerts the last value then takes it out of the array
+let fruits2 = ["Watermelon", "Grape"];
+fruits2.push("Pear");
+alert(fruits2);
+let fruits3 = ["Apple", "Orange", "Grapes"];
+alert(fruits3.shift());
+alert(fruits3);
+// fruits .unshifts return the first element
