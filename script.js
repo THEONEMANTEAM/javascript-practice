@@ -567,3 +567,15 @@ function memoize(functio) {
 multiply = memoize(multiply);
 alert(multiply(5, 8));
 alert(multiply(5, 8));
+// Objects
+let user2 = {
+    Name: "Peter",
+    age: 4,
+    Sex: "Male",
+    "like friends": true,
+};
+alert(user2.Name);
+alert(user2.age);
+alert(user2.Sex);
+alert(user2["like friends"]);
+// delete user.Name : This is used to remove an operator.
