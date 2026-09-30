@@ -639,3 +639,8 @@ alert(elements);
 let element = ["You", "Know", "I", "am", "Javascript"];
 element.splice(1, 3, "are");
 alert(element);
+let arrr1 = [1, 2, 3, 4, 5];
+alert(arrr1.slice(1, 4));
+let arr5 = [1, 2];
+alert(arr5.concat[4, 5]);
+["Avery", "Kai", "London"].forEach(alert);
