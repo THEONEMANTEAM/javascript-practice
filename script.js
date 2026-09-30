@@ -628,3 +628,14 @@ let fruits3 = ["Apple", "Orange", "Grapes"];
 alert(fruits3.shift());
 alert(fruits3);
 // fruits .unshifts return the first element
+let arrr = ["one", "two", "three"];
+delete arrr[1];
+alert(arrr[1]);
+alert(arrr.length);
+// The delete removes a variable
+let elements = ["I", "am", "Javascript"];
+elements.splice(0);
+alert(elements);
+let element = ["You", "Know", "I", "am", "Javascript"];
+element.splice(1, 3, "are");
+alert(element);
