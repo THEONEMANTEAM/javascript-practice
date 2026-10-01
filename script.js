@@ -644,3 +644,16 @@ alert(arrr1.slice(1, 4));
 let arr5 = [1, 2];
 alert(arr5.concat[4, 5]);
 ["Avery", "Kai", "London"].forEach(alert);
+let arr6 = [1, 2, 3, 4, 5];
+alert(arr6.indexOf(5));
+// The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present. In this case, it returns 4 because 5 is at index 4 in the array arr6. The alert function shows the result in an alert box.
+alert(arr6.includes(NaN));
+// The includes() method determines whether an array includes a certain value among its entries, returning true or false as appropriate. In this case, it returns false because NaN is not present in the array arr6. The alert function shows the result in an alert boxlet 
+let users1 = [
+    { id: 1, name: "April" },
+    { id: 2, name: "Damon" },
+    { id: 3, name: "Dariel" },
+    { id: 4, name: "Darius" }
+]
+alert(users1.find(item => item.id == 1).name);
+alert(users1.findIndex(user => user.name == "Damon"));
