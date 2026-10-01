@@ -642,7 +642,7 @@ alert(element);
 let arrr1 = [1, 2, 3, 4, 5];
 alert(arrr1.slice(1, 4));
 let arr5 = [1, 2];
-alert(arr5.concat[4, 5]);
+alert(arr5.concat([4, 5]));
 ["Avery", "Kai", "London"].forEach(alert);
 let arr6 = [1, 2, 3, 4, 5];
 alert(arr6.indexOf(5));
@@ -654,6 +654,28 @@ let users1 = [
     { id: 2, name: "Damon" },
     { id: 3, name: "Dariel" },
     { id: 4, name: "Darius" }
-]
+];
 alert(users1.find(item => item.id == 1).name);
 alert(users1.findIndex(user => user.name == "Damon"));
+// The find() method returns the value of the first element in the array that satisfies the provided testing function. In this case, it returns the object with id 1, and then we access its name property to get "April". The alert function shows the result in an alert box. The findIndex() method returns the index of the first element in the array that satisfies the provided testing function. In this case, it returns 1 because "Damon" is at index 1 in the users1 array. The alert function shows the result in an alert box.
+let mostUsers = users1.filter(item => item.id < 4);
+alert(mostUsers.length);
+// The filter() method creates a new array with all elements that pass the test implemented by the provided function. In this case, it returns an array of objects with id less than 4, which are the first three users. The alert function shows the length of the new array, which is 3.
+let usersMost = users1.map(item => item.name + " is my friend");
+alert(usersMost[0]);
+alert(usersMost[1]);
+alert(usersMost[2]);
+alert(usersMost[3]);
+// The map() method creates a new array populated with the results of calling a provided function on every element in the calling array. In this case, it returns an array of strings that append "is my friend" to each user object. The alert function shows each string in an alert box.
+function compareNumeric(a, b) {
+    if (a > b) return 1;
+    if (a == b) return 0;
+    if (a < b) return -1;
+}
+let arr7 = [1, 2, 15];
+arr7.sort(compareNumeric);
+alert(arr7);
+// The sort() method sorts the elements of an array in place and returns the sorted array. In this case, we provide a compare function that compares two numbers a and b. The function returns 1 if a is greater than b, 0 if they are equal, and -1 if a is less than b. This ensures that the numbers are sorted in ascending order. The alert function shows the sorted array in an alert box.
+let arr8 = [1, 2, 3, 4, 5];
+arr8.sort((a, b) => a - b);
+alert(arr8);
