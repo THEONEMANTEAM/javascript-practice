@@ -679,3 +679,44 @@ alert(arr7);
 let arr8 = [1, 2, 3, 4, 5];
 arr8.sort((a, b) => a - b);
 alert(arr8);
+let countries = ['Österreich', 'Andorra', 'Vietnam'];
+alert(countries.sort((a, b) => a.localeCompare(b)));
+alert(arr8.reverse());
+let names5 = "Draco , Harry, Hermione, Ron".split(", ", 2);
+alert(names5);
+let arr9 = [1, 2, 3, 4, 5];
+let srt2 = arr9.join(";");
+alert(srt2);
+let arr10 = [1, 2, 3, 4, 5];
+let result4 = arr10.reduce((sum, current) => sum + current, 0);
+alert(result4);
+// The reduce() method executes a reducer function (that you provide) on each element of the array, resulting in a single output value. In this case, we provide a reducer function that takes two arguments: sum and current. The function adds the current value to the sum and returns the new sum. The second argument to reduce() is the initial value of sum, which is 0. The alert function shows the final result, which is the sum of all elements in arr10.
+alert(Array.isArray([]));
+alert(Array.isArray({}));
+// The Array.isArray() method determines whether the passed value is an array. In this case, it returns true for an empty array and false for an empty object. The alert function shows the result in an alert box.
+let range = {
+    from: 1,
+    to: 5,
+    [Symbol.iterator]() {
+        this.current = this.from;
+        return this;
+    },
+    next() {
+        if (this.current <= this.to) {
+            return { done: false, value: this.current++ };
+        } else {
+            return { done: true };
+        }
+    }
+};
+for (let num of range) {
+    alert(num);
+}
+// The code defines an object `range` that represents a range of numbers from `from` to `to`. It implements the iterable protocol by defining a method with the key `[Symbol.iterator]`, which initializes the current value and returns the iterator object (the `range` object itself). The `next()` method is defined to return the next value in the range until it reaches the end, at which point it returns `{ done: true }`. The `for...of` loop iterates over the `range` object, alerting each number in the range from 1 to 5.
+let word = "Hellium";
+let it = word[Symbol.iterator]();
+while (true) {
+    let result = it.next();
+    if (result.done) break;
+    alert(result.value);
+}
