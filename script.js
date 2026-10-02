@@ -720,3 +720,36 @@ while (true) {
     if (result.done) break;
     alert(result.value);
 }
+let arrLike = {
+    0: "Man",
+    1: "Woman",
+}
+let arrLike1 = Array.from(arrLike);
+alert(arrLike1.pop());
+// The code defines an object `arrLike` that has numeric keys and string values, resembling an array-like structure. The `Array.from()` method is used to create a new array from the `arrLike` object. The resulting array is stored in `arrLike1`. The `pop()` method is then called on `arrLike1`, which removes and returns the last element of the array, which is "Woman". The alert function shows the result in an alert box.
+let visit = { name: "John" }
+let map = new Map();
+map.set(visit, 123);
+alert(map.get(visit));
+// The code defines an object `visit` with a property `name` set to "John". A new `Map` object is created and stored in the variable `map`. The `set()` method is called on the `map`, using the `visit` object as the key and the number 123 as the value. The `get()` method is then called on the `map` with the `visit` object as the key, which retrieves the value associated with that key (123). The alert function shows the result in an alert box.
+let recepies = new Map([
+    ["apple", 5],
+    ["banana", 10],
+    ["grapefruit", 15],
+]);
+for (let vegetables of recepies.keys()) {
+    alert(vegetables);
+}
+for (let amount of recepies.keys()) {
+    alert(amount);
+}
+for (let entry of recepies.entries()) {
+    alert(entry);
+}
+let prices = Object.fromEntries([
+    ['banana', 1],
+    ['orange', 2],
+    ['meat', 4]
+]);
+// prices is { banana: 1, orange: 2, meat: 4 }
+alert(prices.orange);  
