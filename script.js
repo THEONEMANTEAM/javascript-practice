@@ -740,7 +740,7 @@ let recepies = new Map([
 for (let vegetables of recepies.keys()) {
     alert(vegetables);
 }
-for (let amount of recepies.keys()) {
+for (let amount of recepies.values()) {
     alert(amount);
 }
 for (let entry of recepies.entries()) {
@@ -752,4 +752,25 @@ let prices = Object.fromEntries([
     ['meat', 4]
 ]);
 // prices is { banana: 1, orange: 2, meat: 4 }
-alert(prices.orange);  
+alert(prices.orange);
+let prices1 = new Set();
+let john = { name: "John" };
+let pete = { name: "Pete" };
+let mary = { name: "Mary" };
+prices1.add(john);
+prices1.add(pete);
+prices1.add(mary);
+prices1.add(john);
+alert(prices1.size);
+// The code creates a new `Set` object called `prices1`. It then creates three objects: `john`, `pete`, and `mary`, each with a `name` property. The `add()` method is called on the `prices1` set to add these objects. Since sets only store unique values, adding `john` again does not increase the size of the set. Finally, the `size` property of the set is alerted, which shows the number of unique objects in the set (3).
+alert(prices1.size);
+for (let set of prices1) {
+    alert(set.name);
+}
+let [firstName, secondName] = "Daniel Lala".split(",");
+alert(firstName);
+alert(secondName);
+// The code uses destructuring assignment to extract values from an array returned by the `split()` method. The string "Daniel Lala" is split into an array of two elements: ["Daniel", "Lala"]. The first element is assigned to `firstName`, and the second element is assigned to `secondName`. The alert function shows the values of `firstName` and `secondName` in alert boxes.  
+let [Firstname, , title] = ["Augustus", "Lander", "III", "Esq"];
+alert(title);
+// The code uses destructuring assignment to extract values from an array. The array ["Augustus", "Lander", "III", "Esq"] has four elements. The first element is assigned to `Firstname`, the second element is skipped (indicated by the empty space between the commas), and the third element is assigned to `title`. The alert function shows the value of `title`, which is "III".
