@@ -797,3 +797,43 @@ let option = {
     name7: "Variable",
 }
 let { name7 = prompt("name?", ""), value = prompt("value?", "") } = option;
+// The code uses destructuring assignment with default values to extract properties from the `option` object. The property `name7` is extracted and assigned to the variable `name7`. Since the `value` property does not exist in the `option` object, the default value is used, which prompts the user for input using the `prompt()` function. The input is assigned to the variable `value`.
+let options1 = {
+    title2: "Menu",
+    width: 100,
+    height: 200
+}
+let { title2, ...size } = options1;
+alert(size.width);
+alert(size.height);
+// The code uses destructuring assignment with the rest operator to extract properties from the `options1` object. The property `title2` is extracted and assigned to the variable `title2`, while the remaining properties (`width` and `height`) are collected into a new object called `size`. The alert function shows the values of `size.width` and `size.height` in alert boxes. Note that there is a typo in the second alert statement (`aert` should be `alert`).
+let title3, width1, height2;
+({ title3, width1, height2 } = { title3: "Menu", width1: 100, height2: 200 });
+alert(title3);
+alert(width1);
+alert(height2);
+// The code uses destructuring assignment to extract properties from an object and assign them to existing variables. The properties `title3`, `width1`, and `height2` are extracted from the object `{ title3: "Menu", width1: 100, height2: 200 }` and assigned to the corresponding variables. The alert function shows the values of `title3`, `width1`, and `height2` in alert boxes.
+let options2 = {
+    title4: "Menu",
+    size: {
+        height3: 200,
+        width2: 100
+    },
+    items: ["Cake", "Donut"],
+    extra: true
+};
+let {
+    size: {
+        height3,
+        width2
+    },
+    items: [item1, item2],
+    title4 = "Menu"
+} = options2;
+alert(title4);
+alert(height3);
+alert(width2);
+alert(item1);
+alert(item2);
+// The code uses nested destructuring assignment to extract values from the `options2` object. The properties `height3` and `width2` are extracted from the nested `size` object, while the elements of the `items` array are extracted into `item1` and `item2`. The property `title4` is also extracted with a default value of "Menu". The alert function shows the values of `title4`, `height3`, `width2`, `item1`, and `item2` in alert boxes.    
+
