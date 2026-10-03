@@ -774,3 +774,26 @@ alert(secondName);
 let [Firstname, , title] = ["Augustus", "Lander", "III", "Esq"];
 alert(title);
 // The code uses destructuring assignment to extract values from an array. The array ["Augustus", "Lander", "III", "Esq"] has four elements. The first element is assigned to `Firstname`, the second element is skipped (indicated by the empty space between the commas), and the third element is assigned to `title`. The alert function shows the value of `title`, which is "III".
+let [name1, name2, ...rest] = ["Angstrom", "Levy", "The Portal", "Traveler", "The Wanderer"];
+alert(rest.length);
+alert(rest[0]);
+alert(rest[1]);
+// The code uses destructuring assignment to extract values from an array. The first two elements of the array are assigned to `name1` and `name2`, while the rest of the elements are collected into the `rest` array using the rest operator (`...`). The alert function shows the length of the `rest` array (3), as well as the first and second elements of the `rest` array, which are "The Portal" and "Traveler", respectively. 
+let [Name = prompt("name?", ""), Age = prompt("age?", "")] = [];
+alert(Name);
+alert(Age);
+// The code uses destructuring assignment with default values to extract values from an empty array. Since the array is empty, the default values are used. The `prompt()` function is called to ask the user for their name and age, and the input is assigned to `Name` and `Age`, respectively. The alert function shows the values of `Name` and `Age` in alert boxes.
+let options = {
+    title1: "Menu",
+    width: 100,
+    height: 200
+}
+let { title1, width, height } = options;
+alert(title1);
+alert(width);
+alert(height);
+// The code uses destructuring assignment to extract values from the `options` object. The properties `title1`, `width`, and `height` are extracted and assigned to variables with the same names. The alert function shows the values of `title1`, `width`, and `height` in alert boxes. Note that there is a typo in the second alert statement (`aletrt` should be `alert`).
+let option = {
+    name7: "Variable",
+}
+let { name7 = prompt("name?", ""), value = prompt("value?", "") } = option;
