@@ -856,3 +856,12 @@ alert(timerID);
 let timerID1 = setTimeout(() => alert("Hello"), 2000);
 clearTimeout(timerID1);
 // The code uses the `setTimeout()` function to schedule the execution of an arrow function that displays an alert with the message "Hello" every 2000 milliseconds (2 seconds). The `setTimeout()` function returns a unique identifier for the interval timer, which is stored in the variable `timerID1`. The `clearTimeout(timerID1)` line cancels the scheduled execution of the interval timer, preventing any further alerts from being shown.
+let intervalID = setInterval(() => alert("Tick"), 3000);
+setTimeout(() => { clearInterval(intervalID); alert("End Of Ticks") }, 7000);
+// The code uses the `setInterval()` function to schedule the execution of an arrow function that displays an alert with the message "Tick" every 3000 milliseconds (3 seconds). The `setInterval()` function returns a unique identifier for the interval timer, which is stored in the variable `intervalID`. The `setTimeout()` function is then used to schedule the execution of another arrow function after a delay of 6000 milliseconds (6 seconds). This second arrow function calls `clearInterval(intervalID)` to cancel the scheduled execution of the interval timer, preventing any further alerts from being shown. It also displays an alert with the message "End Of Ticks".
+let ii = 1;
+let consoleID = setInterval(() => {
+    console.log(ii++);
+}, 100)
+setTimeout(() => clearInterval(consoleID), 1000);
+// The code uses the `setInterval()` function to schedule the execution of an arrow function that calls the `func()` function with an incrementing value of `ii` every 100 milliseconds. The `setTimeout()` function is then used to schedule the execution of another arrow function after a delay of 1000 milliseconds (1 second). This second arrow function calls `clearInterval(intervalID)` to cancel the scheduled execution of the interval timer, preventing any further calls to `func()`. However, there is an issue in the code: `clearInterval(ii)` should be `clearInterval(intervalID)` where `intervalID` is the identifier returned by `setInterval()`.
