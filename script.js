@@ -836,4 +836,23 @@ alert(width2);
 alert(item1);
 alert(item2);
 // The code uses nested destructuring assignment to extract values from the `options2` object. The properties `height3` and `width2` are extracted from the nested `size` object, while the elements of the `items` array are extracted into `item1` and `item2`. The property `title4` is also extracted with a default value of "Menu". The alert function shows the values of `title4`, `height3`, `width2`, `item1`, and `item2` in alert boxes.    
-
+function sayNo() {
+    alert("No");
+}
+setTimeout(sayNo, 1000);
+// The timeout waits one seconds before it shoots 
+function sayNay(phrase, text) {
+    alert(phrase + ", " + text);
+}
+setTimeout(sayNay, 1000, "Hello", "Goerge");
+// The code defines a function `sayNay` that takes two parameters: `phrase` and `text`. It then uses the `setTimeout()` function to schedule the execution of `sayNay` after a delay of 1000 milliseconds (1 second). The additional arguments "Hello" and "Goerge" are passed to the `sayNay` function when it is called. After 1 second, an alert box will display the message "Hello, Goerge".
+setTimeout(() => alert("React"), 1000);
+// The code uses the `setTimeout()` function to schedule the execution of an arrow function after a delay of 1000 milliseconds (1 second). The arrow function contains an `alert()` call that displays the message "React". After 1 second, an alert box will show the message "React".
+let timerID = setTimeout(() => alert("Dont run"), 1000);
+alert(timerID);
+clearTimeout(timerID);
+alert(timerID);
+// The code uses the `setTimeout()` function to schedule the execution of an arrow function that displays an alert with the message "Dont run" after a delay of 1000 milliseconds (1 second). The `setTimeout()` function returns a unique identifier for the timer, which is stored in the variable `timerID`. The `alert(timerID)` line displays the timer ID in an alert box. The `clearTimeout(timerID)` line cancels the scheduled execution of the timer, preventing the alert from being shown.
+let timerID1 = setTimeout(() => alert("Hello"), 2000);
+clearTimeout(timerID1);
+// The code uses the `setTimeout()` function to schedule the execution of an arrow function that displays an alert with the message "Hello" every 2000 milliseconds (2 seconds). The `setTimeout()` function returns a unique identifier for the interval timer, which is stored in the variable `timerID1`. The `clearTimeout(timerID1)` line cancels the scheduled execution of the interval timer, preventing any further alerts from being shown.

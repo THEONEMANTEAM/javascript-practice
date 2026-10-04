@@ -20,3 +20,8 @@ Closures, higher-order functions, rest/spread, recursion and the call stack.
 ## Status
 
 Work in progress. Next up: arrays and objects (Days 19-23).
+## Status
+
+Arrays, objects, iterables, Map/Set and destructuring covered.
+Data transformation pipeline and the vault exercise still to do.
+Currently learning async JavaScript (callbacks, promises, async/await).
