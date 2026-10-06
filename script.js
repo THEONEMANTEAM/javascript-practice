@@ -865,3 +865,8 @@ let consoleID = setInterval(() => {
 }, 100)
 setTimeout(() => clearInterval(consoleID), 1000);
 // The code uses the `setInterval()` function to schedule the execution of an arrow function that calls the `func()` function with an incrementing value of `ii` every 100 milliseconds. The `setTimeout()` function is then used to schedule the execution of another arrow function after a delay of 1000 milliseconds (1 second). This second arrow function calls `clearInterval(intervalID)` to cancel the scheduled execution of the interval timer, preventing any further calls to `func()`. However, there is an issue in the code: `clearInterval(ii)` should be `clearInterval(intervalID)` where `intervalID` is the identifier returned by `setInterval()`.
+let promise = new Promise((resolve, reject) => {
+    setTimeout(() => resolve("Done"), 1000);
+});
+promise.then(result => alert(result));
+// The code creates a new `Promise` object that takes a function with two parameters: `resolve` and `reject`. Inside the function, a `setTimeout()` is used to simulate an asynchronous operation that resolves the promise with the value "Done" after a delay of 1000 milliseconds (1 second). The `then()` method is called on the promise, which takes a callback function that receives the resolved value as its argument. When the promise is resolved, an alert box will display the message "Done".    
