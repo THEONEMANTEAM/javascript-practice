@@ -902,5 +902,8 @@ new Promise((resolve, reject) => {
     alert(result);
     return new Promise((resolve, reject) => {
         setTimeout(() => resolve(result * 2), 1000);
-    })
+    });
 })
+fetch('/article/promise-chaining/user.json')
+    .then(response => response.json())
+    .then(user => alert(user.name))
