@@ -868,5 +868,39 @@ setTimeout(() => clearInterval(consoleID), 1000);
 let promise = new Promise((resolve, reject) => {
     setTimeout(() => resolve("Done"), 1000);
 });
-promise.then(result => alert(result));
+promise.then(value => alert(value));
 // The code creates a new `Promise` object that takes a function with two parameters: `resolve` and `reject`. Inside the function, a `setTimeout()` is used to simulate an asynchronous operation that resolves the promise with the value "Done" after a delay of 1000 milliseconds (1 second). The `then()` method is called on the promise, which takes a callback function that receives the resolved value as its argument. When the promise is resolved, an alert box will display the message "Done".    
+function checkGe(age) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (age > 18) {
+                resolve("You are an adult");
+            } else {
+                reject("You are not an adult");
+            }
+        }, 1000)
+    });
+}
+checkGe(20)
+    .then(message => alert(message))
+    .catch(error => alert(error))
+    .finally(() => alert("Check completed"));
+// The code defines a function `checkGe` that takes an `age` parameter and returns a new `Promise`. Inside the promise, a `setTimeout()` is used to simulate an asynchronous operation that checks if the age is greater than 18. If it is, the promise is resolved with the message "You are an adult"; otherwise, it is rejected with the message "You are not an adult". The `then()` method is called on the promise to handle the resolved value, displaying it in an alert box. The `catch()` method is called to handle any errors, also displaying them in an alert box. In this case, since the age passed to `checkGe` is 20, the alert will show "You are an adult" after 1 second.  
+new Promise((resolve, reject) => {
+    setTimeout(() => resolve(1), 1000);
+}).then(function (result) {
+    alert(result);
+    return new Promise((resolve, reject) => {
+        setTimeout(() => resolve(result * 2), 1000);
+    });
+}).then(function (result) {
+    alert(result);
+    return new Promise((resolve, reject) => {
+        setTimeout(() => resolve(result * 2), 1000);
+    });
+}).then(function (result) {
+    alert(result);
+    return new Promise((resolve, reject) => {
+        setTimeout(() => resolve(result * 2), 1000);
+    })
+})
