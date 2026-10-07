@@ -912,3 +912,55 @@ Promise.all([
     new Promise(resolve => setTimeout(() => resolve(2), 2000)),
     new Promise(resolve => setTimeout(() => resolve(3), 1000))
 ]).then(alert);
+// The code uses `Promise.all()` to wait for multiple promises to resolve. It creates three promises that resolve with the values 1, 2, and 3 after delays of 3000 milliseconds (3 seconds), 2000 milliseconds (2 seconds), and 1000 milliseconds (1 second), respectively. The `Promise.all()` method takes an array of promises and returns a new promise that resolves when all of the input promises have resolved. The resolved value is an array containing the results of the input promises in the same order. In this case, after all three promises have resolved, an alert box will display the array `[1, 2, 3]`.
+let names = ["Dariel", "Damon", "Darius", "Damon"];
+let url = [
+    'https://api.github.com/users/Dariel',
+    'https://api.github.com/users/Damon',
+    'https://api.github.com/users/Darius',
+    'https://api.github.com/users/Damon'
+];
+let requests = url.map(url => fetch(url));
+Promise.all(requests)
+    .then(responses => responses.forEach(
+        response => alert(`${response.url}: ${response.status}`)
+    ))
+Promise.all([
+    new Promise((resolve, reject) => setTimeout(() => resolve(a), 1000)),
+    new Promise((resolve, reject) => setTimeout(() => reject(new Error("Error")), 2000)),
+    new Promise((reject, resolve) => setTimeout(() => resolve(c), 3000))
+]).catch(alert);
+// The code uses `Promise.all()` to wait for multiple promises to resolve. It creates three promises that resolve or reject after delays of 1000 milliseconds (1 second), 2000 milliseconds (2 seconds), and 3000 milliseconds (3 seconds), respectively. The first promise resolves with the value `a`, the second promise rejects with an error message "Error", and the third promise resolves with the value `c`. The `Promise.all()` method takes an array of promises and returns a new promise that resolves when all of the input promises have resolved, or rejects if any of the input promises reject. In this case, since the second promise rejects, the `catch()` method is called, which alerts the error message "Error".
+Promise.all([
+    new Promise((resolve, reject) => {
+        setTimeout(() => resolve(1), 1000)
+    }),
+    2,
+    3
+])
+// The code uses `Promise.all()` to wait for multiple promises to resolve. It creates an array containing a promise that resolves with the value 1 after a delay of 1000 milliseconds (1 second), and two non-promise values (2 and 3). The `Promise.all()` method takes an array of promises and returns a new promise that resolves when all of the input promises have resolved. In this case, the first promise resolves after 1 second, and the other two values are already resolved. The resulting promise will resolve with an array containing the values `[1, 2, 3]`. However, since there is no `.then()` or `.catch()` method chained to handle the result, nothing will be alerted or logged in this case.
+new Promise((resolve, reject) => setTimeout(() => resolve("This is correct"), 1000))
+    .then(alert);
+new Promise((resolve, reject) => setTimeout(() => reject(new Error("This is wrong")), 1000))
+    .catch(alert);
+// The code creates two separate promises. The first promise resolves with the value "This is correct" after a delay of 1000 milliseconds (1 second) and uses the `then()` method to alert the resolved value. The second promise rejects with an error message "This is wrong" after a delay of 1000 milliseconds (1 second) and uses the `catch()` method to alert the error message. After 1 second, two alert boxes will be displayed: one showing "This is correct" and the other showing "Error: This is wrong".
+Promise.race([
+    new Promise((resolve, reject) => setTimeout(() => resolve("This is correct"), 1000)),
+    new Promise((resolve, reject) => setTimeout(() => reject(new Error("This is wrong")), 2000))
+])
+    .then(alert)
+    .catch(alert);
+// The code uses `Promise.race()` to wait for the first promise to settle (either resolve or reject) among an array of promises. It creates two promises: the first promise resolves with the value "This is correct" after a delay of 1000 milliseconds (1 second), and the second promise rejects with an error message "This is wrong" after a delay of 2000 milliseconds (2 seconds). The `Promise.race()` method returns a new promise that settles as soon as one of the input promises settles. In this case, the first promise resolves first, so the `then()` method is called, which alerts the resolved value "This is correct". The `catch()` method will not be called since the first promise resolved successfully.
+Promise.allSettled([
+    new Promise((resolve, reject) => setTimeout(() => resolve("This is correct"), 1000)),
+    new Promise((resolve, reject) => setTimeout(() => reject(new Error("This is wrong")), 2000))
+])
+    .then(results => results.forEach(result => alert(result.status)));
+// The code uses `Promise.allSettled()` to wait for all promises in an array to settle (either resolve or reject). It creates two promises: the first promise resolves with the value "This is correct" after a delay of 1000 milliseconds (1 second), and the second promise rejects with an error message "This is wrong" after a delay of 2000 milliseconds (2 seconds). The `Promise.allSettled()` method returns a new promise that resolves with an array of objects representing the outcome of each input promise. Each object has a `status` property indicating whether the promise was fulfilled or rejected. The `then()` method is called on the resulting promise, which iterates over the array of results and alerts the `status` of each promise. After 2 seconds, two alert boxes will be displayed: one showing "fulfilled" for the first promise and the other showing "rejected" for the second promise.
+Promise.any([
+    new Promise((resolve, reject) => setTimeout(() => resolve("This is correct"), 1000)),
+    new Promise((resolve, reject) => setTimeout(() => reject(new Error("This is wrong")), 2000))
+])
+    .then(alert)
+    .catch(alert);
+// The code uses `Promise.any()` to wait for the first promise to resolve among an array of promises. It creates two promises: the first promise resolves with the value "This is correct" after a delay of 1000 milliseconds (1 second), and the second promise rejects with an error message "This is wrong" after a delay of 2000 milliseconds (2 seconds). The `Promise.any()` method returns a new promise that resolves as soon as one of the input promises resolves. In this case, the first promise resolves first, so the `then()` method is called, which alerts the resolved value "This is correct". The `catch()` method will not be called since the first promise resolved successfully.
