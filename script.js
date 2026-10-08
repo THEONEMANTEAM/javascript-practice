@@ -1003,3 +1003,10 @@ async function r() {
     }
 }
 r();
+async function showIt() {
+    let url = "https://jsonplaceholder.typicode.com/users"
+    let response = await fetch(url);
+    let show = await response.json()
+    alert(show);
+}
+showIt();
