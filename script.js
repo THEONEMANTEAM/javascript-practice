@@ -964,3 +964,17 @@ Promise.any([
     .then(alert)
     .catch(alert);
 // The code uses `Promise.any()` to wait for the first promise to resolve among an array of promises. It creates two promises: the first promise resolves with the value "This is correct" after a delay of 1000 milliseconds (1 second), and the second promise rejects with an error message "This is wrong" after a delay of 2000 milliseconds (2 seconds). The `Promise.any()` method returns a new promise that resolves as soon as one of the input promises resolves. In this case, the first promise resolves first, so the `then()` method is called, which alerts the resolved value "This is correct". The `catch()` method will not be called since the first promise resolved successfully.
+async function f() {
+    return 1;
+}
+f().then(alert);
+// The code defines an asynchronous function `f` that returns the value 1. When an async function is called, it returns a promise that resolves with the returned value. In this case, calling `f()` returns a promise that resolves with 1. The `then()` method is called on the returned promise, which alerts the resolved value 1 in an alert box.  
+async function f1() {
+    let promise = new Promise((resolve, reject) => {
+        setTimeout(() => resolve("This is f1"), 1000);
+    });
+    let result5 = await promise;
+    alert(result5);
+
+}
+f1();
