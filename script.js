@@ -978,3 +978,28 @@ async function f1() {
 
 }
 f1();
+class Player {
+    constructor(name, tag) {
+        this.name = name;
+        this.tag = tag;
+    }
+
+    Greeting() {
+        return "Welcome: " + this.name + " Player: " + this.tag
+    }
+}
+let p1 = new Player("Radin", "RF-345");
+let p2 = new Player("Varien", "RT-687");
+let p3 = new Player("Dramon", "RX-286");
+alert(p1.Greeting());
+alert(p2.Greeting());
+alert(p3.Greeting());
+async function r() {
+    try {
+        let response = await fetch("https://no-such-url");
+    }
+    catch (err) {
+        alert(err);
+    }
+}
+r();
