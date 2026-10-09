@@ -1030,7 +1030,6 @@ palDI()
 import { greetME } from './add.js';
 alert(greetME);
 greetME("Raven");
-import { sayHI } from "./add.js"
+import { sayHI, sayBYE } from "./add.js"
 sayHI("Verity");
-import { sayBYE } from "./add.js"
 sayBYE("Latina");
