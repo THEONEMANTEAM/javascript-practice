@@ -1006,7 +1006,23 @@ r();
 async function showIt() {
     let url = "https://jsonplaceholder.typicode.com/users"
     let response = await fetch(url);
-    let show = await response.json()
+    let show = await response.json();
     alert(show);
 }
 showIt();
+async function palDI() {
+    let user = {
+        Name: "Fred",
+        Age: 23
+    }
+    let response1 = await fetch("https://jsonplaceholder.typicode.com/posts", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json;charset=utf-8"
+        },
+        body: JSON.stringify(user)
+    });
+    let result = await response1.json()
+    alert(JSON.stringify(result));
+}
+palDI()
