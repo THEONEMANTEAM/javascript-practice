@@ -1036,3 +1036,31 @@ sayBYE("Latina");
 let say = await import("./add.js");
 say.hi();
 say.bye();
+function makeClass(phrase) {
+    return class {
+        vaID() {
+            alert(phrase);
+        }
+    };
+}
+let User = makeClass("Hello")
+new User().vaID();
+class NEW {
+    constructor(name) {
+        this.name = name;
+    }
+    get name() {
+        return this._name
+    }
+    set name(value) {
+        if (value.length < 4) {
+            alert("Name is too short")
+            return;
+        }
+        this._name = value;
+    }
+}
+let user9 = new NEW("Al");
+alert(user9.name);
+let user8 = new NEW("Vulpoy");
+alert(user8.name);
