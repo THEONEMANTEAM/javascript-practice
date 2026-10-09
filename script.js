@@ -1033,3 +1033,6 @@ greetME("Raven");
 import { sayHI, sayBYE } from "./add.js"
 sayHI("Verity");
 sayBYE("Latina");
+let say = await import("./add.js");
+say.hi();
+say.bye();
