@@ -925,6 +925,7 @@ Promise.all(requests)
     .then(responses => responses.forEach(
         response => alert(`${response.url}: ${response.status}`)
     ))
+let a = 1; c = 3;
 Promise.all([
     new Promise((resolve, reject) => setTimeout(() => resolve(a), 1000)),
     new Promise((resolve, reject) => setTimeout(() => reject(new Error("Error")), 2000)),
@@ -1026,3 +1027,10 @@ async function palDI() {
     alert(JSON.stringify(result));
 }
 palDI()
+import { greetME } from './add.js';
+alert(greetME);
+greetME("Raven");
+import { sayHI } from "./add.js"
+sayHI("Verity");
+import { sayBYE } from "./add.js"
+sayBYE("Latina");
