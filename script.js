@@ -1050,7 +1050,7 @@ class NEW {
         this.name = name;
     }
     get name() {
-        return this._name
+        return this._name;
     }
     set name(value) {
         if (value.length < 4) {
@@ -1064,3 +1064,34 @@ let user9 = new NEW("Al");
 alert(user9.name);
 let user8 = new NEW("Vulpoy");
 alert(user8.name);
+class Racer {
+    constructor(name) {
+        this.speed = 0;
+        this.name = name;
+    }
+    run(speed) {
+        this.speed = speed;
+        alert(`This is the racer ${this.name} and ${this.speed}`)
+    }
+    stop() {
+        this.speed = 0;
+        alert(`This is his speed ${this.speed}`)
+    }
+}
+class Lewis extends Racer {
+    fast() {
+        alert(`He is moving at ${this.speed}`);
+    }
+    stop() {
+        super.stop();
+        alert(`${this.name} is resting`);
+    }
+}
+let r1 = new Racer("Bein")
+r1.run(20);
+r1.stop();
+
+let r2 = new Lewis("Vein");
+alert(r2.name);
+r2.run(22);
+r2.fast();   
