@@ -1113,4 +1113,8 @@ class Truck extends Vehicle {
 }
 
 let w1 = new Truck("rv-120", 500);
-w1.weight();   
+w1.weight();
+class Article {
+    static publisher = "Draco Malfoy"
+}
+alert(Article.publisher);
