@@ -1094,4 +1094,23 @@ r1.stop();
 let r2 = new Lewis("Vein");
 alert(r2.name);
 r2.run(22);
-r2.fast();   
+r2.fast();
+class Vehicle {
+    constructor(plate) {
+        this.plate = plate;
+    }
+}
+
+class Truck extends Vehicle {
+    constructor(plate, loadKg) {
+        super(plate);
+        this.loadKg = loadKg;
+    }
+
+    weight() {
+        alert(`This ${this.plate} carried ${this.loadKg}`);
+    }
+}
+
+let w1 = new Truck("rv-120", 500);
+w1.weight();   
