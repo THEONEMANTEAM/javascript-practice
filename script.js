@@ -1118,3 +1118,12 @@ class Article {
     static publisher = "Draco Malfoy"
 }
 alert(Article.publisher);
+let people = {
+    name: "Varid",
+    age: 30,
+    courses: ["math", "physics"],
+    isboy: true
+}
+let peoples = JSON.stringify(people);
+alert(typeof peoples);
+alert(peoples);
