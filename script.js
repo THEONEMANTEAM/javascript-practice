@@ -1135,3 +1135,11 @@ let text5 = JSON.stringify(user4, function (key, value) {
     return value;
 });
 alert(text5);
+let play1 = {
+    name: "Chris",
+    age: 16,
+    isAdmin: false,
+    isEditor: true
+}
+let play2 = JSON.stringify(play1, null, 2);
+alert(play2);
