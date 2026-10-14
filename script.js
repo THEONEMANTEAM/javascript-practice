@@ -1127,3 +1127,11 @@ let people = {
 let peoples = JSON.stringify(people);
 alert(typeof peoples);
 alert(peoples);
+let user4 = { name: "Chris", password: "type456" };
+let text5 = JSON.stringify(user4, function (key, value) {
+    if (key = password) {
+        return undefined;
+    }
+    return value;
+});
+alert(text5);
