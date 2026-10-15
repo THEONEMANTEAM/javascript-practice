@@ -1143,3 +1143,20 @@ let play1 = {
 }
 let play2 = JSON.stringify(play1, null, 2);
 alert(play2);
+class Delivery {
+    constructor(id, address, driverPhone) {
+        this.id = id;
+        this.address = address;
+        this.driverPhone = driverPhone;
+    }
+
+    toJSON() {
+        return { id: this.id, address: this.address };
+    }
+}
+
+let d = new Delivery(1, "12 Allen Ave", "08012345678");
+alert(JSON.stringify(d));
+let nuims = "[0,1,2,3,4]"
+nuims = JSON.parse(nuims);
+alert(nuims[1]);
