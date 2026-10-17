@@ -1154,9 +1154,36 @@ class Delivery {
         return { id: this.id, address: this.address };
     }
 }
-
+// toJSON() its used to return a particular aspect of a place its used for privacy
 let d = new Delivery(1, "12 Allen Ave", "08012345678");
 alert(JSON.stringify(d));
 let nuims = "[0,1,2,3,4]"
 nuims = JSON.parse(nuims);
 alert(nuims[1]);
+// JSON.strigify() convert aobjects into texts while JSOB.parse() converts text into objects
+let schedule = `{
+  "meetups": [
+    {"title":"Conference","date":"2017-11-30T12:00:00.000Z"},
+    {"title":"Birthday","date":"2017-04-18T12:00:00.000Z"}
+  ]
+}`;
+
+schedule = JSON.parse(schedule, function (key, value) {
+    if (key == 'date') return new Date(value);
+    return value;
+});
+
+alert(schedule.meetups[1].date.getDate());
+// Replacer for Object to text while Reviver for text to object
+let deliveries = [
+    { id: 1, status: "delivered", distanceKm: 12, driver: { name: "Emeka" } },
+    { id: 2, status: "pending", distanceKm: 15, driver: { name: "Adam" } },
+    { id: 3, status: "delivered", distanceKm: 15, driver: { name: "Dumbledore" } }
+]
+alert(deliveries[0].status);
+let delivered = deliveries.filter(d => d.status === "delivered" && d.distanceKm > 12);
+alert(delivered.length);
+let summaries = delivered.map(({ driver, distanceKm }) => `${driver.name}: ${distanceKm}`)
+alert(summaries);
+let total = delivered.reduce((sum, d) => sum + d.distanceKm, 0);
+alert(total);
